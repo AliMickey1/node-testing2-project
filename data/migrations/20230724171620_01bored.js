@@ -1,7 +1,5 @@
-
 exports.up = function(knex) {
-    return knex.schema
-      .createTable('bored', tbl => {
+    return knex.schema.createTable('bored', tbl => {
           tbl.increments('activity_id')
           tbl.text('activity').notNullable()
           tbl.text('type').notNullable()
@@ -11,7 +9,6 @@ exports.up = function(knex) {
   };
   
   exports.down = function(knex) {
-      return knex.schema
-          .dropTableIfExists('bored')
+      return knex.schema.dropTableIfExists('bored')
   };
   

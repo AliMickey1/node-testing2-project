@@ -1,20 +1,47 @@
 // Update with your config settings.
+const common = {
+  client: 'sqlite3',
+  useNullAsDefault: true,
+  migrations: { directory: './data/migrations' },
+  seeds: { directory: './data/seeds' },
+}
 
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    ...common,
     connection: {
-      filename: './dev.sqlite3'
+      filename: './data/dev.sqlite',
     },
-    useNullAsDefault: true,
   },
-      migrations:{
-      directory: './data/migrations',
+  testing: {
+    ...common,
+    connection: {
+      filename: './data/dev.db3',
     },
-    seeds:{
-      directory: './data/seeds'
-    },
+  },
+  production: {
+
+  },
+};
+
+
+
+// module.exports = {
+
+//   development: {
+//     client: 'sqlite3',
+//     useNullAsDefault: true,
+//     connection: {
+//       filename: './dev.sqlite3'
+//     },
+
+//   },
+//       migrations:{
+//       directory: './data/migrations',
+//     },
+//     seeds:{
+//       directory: './data/seeds'
+//     },
   // testing: {
   //   // ...common,
   //   connection: {
@@ -55,4 +82,4 @@ module.exports = {
   //   }
   // }
 
-};
+// };

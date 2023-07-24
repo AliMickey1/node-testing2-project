@@ -1,8 +1,8 @@
 const express = require("express")
 const server = express()
-const jokesRouter = require('./api/jokesRouter.js')
+const boredRouter = require('./api/boredRouter')
 
 server.use(express.json())
-server.use('/jokes', jokesRouter)
+server.use('/bored', boredRouter)
 
 module.exports = server
